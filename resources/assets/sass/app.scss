@@ -1,2 +1,26 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "animate";
 
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: table;
+    font-weight: 100;
+    font-family: 'Lato';
+}
+
+.title {
+    font-size: 96px;
+    height: 143px;
+    position: absolute;
+    top:-20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

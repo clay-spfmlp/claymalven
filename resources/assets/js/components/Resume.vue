@@ -1,0 +1,136 @@
+<template>
+<h2>OBJECTIVE</h2>
+
+<p>Seeking a challenging and rewarding position as a Web Developer, which will allow me to 
+
+exercise and expand my skills, while contributing to the success of an organization.</p>
+
+<h2>SUMMARY OF SKILLS</h2>
+
+<p>I obtain solid experiences in the IT field that allowed me to utilize my technical and problem-
+
+solving skills. I possess an ability that allows me to pay attention to detail, 
+
+work productively with minimal supervision, and communicate technical concept to 
+
+a non-technical audiences. I learn new technologies quickly and excel in all areas 
+
+of the IT industry.</p>  
+
+<h2>AREAS OF EXPERIENCE</h2>
+
+<p>HTML, XHTML, HTML5, CSS PHP4, PHP5 
+
+Web Programming Languages 
+
+JavaScript/JQuery Zend, Laravel 
+
+Drupal Development Drupal, Joomla 
+
+Adobe Photoshop CS5/6 Mysql, FileMaker/9/10/Server</p> 
+
+<h2>CERTIFICATIONS</h2>
+<ul>
+<li>CompTIA Network+</li> <li>MCP</li>
+</ul>
+<h2>EDUCATION</h2>
+
+<p>2005-2006 Career Point Institute, Network Technician Program</p>
+
+<h2>EMPLOYMENT</h2>
+
+<h3>Carnegie Technologies San Antonio TX, Sept 2014 - July 2015</h3>
+
+<h4>PHP Developer</h4> 
+<ul>
+<li>Develop student management system for private and charter schools</li>
+
+<li>Utilize the Laravel framework and Twitter Bootstrap</li>
+
+<li>Image manipulation, slicing and optimization using Photoshop</li>
+
+<li>Browser compatibility testing with all major browser</li>
+
+<li>Use Git version control and Redmine to track bugs</li>
+</ul>
+<h3>SPFM LP San Antonio TX, March 2013 - Sept 2014</h3>
+
+<h4>Drupal Developer</h4> 
+<ul>
+<li>Provide front-end development & site building utilizing Drupal cms</li>
+
+<li>Custom module building and Drupal Themeing</li>
+
+<li>Image manipulation, slicing and optimization using Photoshop and Illustrator</li>
+
+<li>Browser compatibility testing with all major browser</li>
+
+<li>Create and send out HTML newsletters</li>
+</ul>
+Boss Creative San Antonio TX, July 2012 - Feb 2013
+
+Drupal Developer 
+
+ Provide front-end development & site building utilizing Drupal cms
+
+ Image manipulation, slicing and optimization using Photoshop
+
+ Browser compatibility testing with all major browser
+
+ Updated articles for Nside online magazine
+
+Texas Youth Hunting Program, San Antonio TX, August 2008 – July 2012
+
+Webmaster/Database Admin/IT Support
+
+ Developed Online Application System with FileMaker Backend 
+
+ Utilized an expert knowledge of JavaScript, HTML, DOM, and CSS to deliver advanced user 
+
+interfaces and controls 
+
+ Computer hardware and software support MS OS
+
+ Design and Developed database with FileMaker Pro
+
+Pre Web Experience 
+
+2Wire, San Antonio TX August 2007- July 2008
+
+Tier 1 Tech support
+
+ Phone/email support for TV, internet and VOIP issues in a call center environment
+
+ Walk customer through connecting wireless, setting up TV, and troubleshoot VOIP 
+
+ Would also provide floor support to agents on the floor and mentor new agents
+
+ Document and record issues within the CRM database
+
+REFERENCES
+
+Rob Kinkaid - Supervisor @ SPFM LP - 210-763-2116
+
+Mike Pilkiton - HR Manger @ Boss Creative - 210-390-0051
+
+Quita Hill - Office Manger @ Texas Wildlife Association - 210-344-2240
+
+LINKS TO WORK
+
+Schenley Learning - www.schenleylearning.com
+
+Livingston Lures - www.livingstonlures.com
+
+Ritter Dental - www.ritterdentalusa.com, ritter.dev.spfmlp.com
+
+Herman Sons Fraternal Insurance - www.texashermannsons.org
+
+San Antonio Family Law Section - www.safamilylaw.org
+
+Texas Leather Interiors - www.texasleatherinteriors.com
+</template>
+<script>
+	export default {
+
+	}
+</script>

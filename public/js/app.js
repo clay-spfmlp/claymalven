@@ -12302,29 +12302,110 @@ if (process.env.NODE_ENV !== 'production' && inBrowser) {
 module.exports = Vue;
 }).call(this,require('_process'))
 },{"_process":1}],5:[function(require,module,exports){
+var inserted = exports.cache = {}
+
+exports.insert = function (css) {
+  if (inserted[css]) return
+  inserted[css] = true
+
+  var elem = document.createElement('style')
+  elem.setAttribute('type', 'text/css')
+
+  if ('textContent' in elem) {
+    elem.textContent = css
+  } else {
+    elem.styleSheet.cssText = css
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(elem)
+  return elem
+}
+
+},{}],6:[function(require,module,exports){
 'use strict';
+
+var _NavBar = require('./components/NavBar.vue');
+
+var _NavBar2 = _interopRequireDefault(_NavBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Vue = require('vue');
 var VueRouter = require('vue-router');
 
 Vue.use(VueRouter);
 
-var App = Vue.extend({});
+var store = require('./modules/store');
+
+var App = Vue.extend({
+    data: function data() {
+        return {
+            store: store
+        };
+    },
+
+    components: {
+        'navbar': _NavBar2.default
+    },
+    methods: {
+        searchShow: function searchShow() {
+            alert('search');
+        }
+    }
+
+});
 
 var router = new VueRouter();
 
 router.map({
-    '/': {
-        component: require('./components/Home.vue')
+    '*': {
+        component: require('./components/404.vue'),
+        name: '404'
     },
-    '/page': {
-        component: require('./components/PageOne.vue')
+    '/': {
+        component: require('./components/Home.vue'),
+        name: 'home'
+    },
+    '/about': {
+        component: require('./components/About.vue'),
+        name: 'about'
+    },
+    '/resume': {
+        component: require('./components/Resume.vue'),
+        name: 'resume'
+    },
+    '/fun-stuff': {
+        component: require('./components/FunStuff.vue'),
+        name: 'fun-stuff'
+    },
+    '/contact': {
+        component: require('./components/Contact.vue'),
+        name: 'contact'
     }
 });
 
 router.start(App, '#app');
 
-},{"./components/Home.vue":6,"./components/PageOne.vue":7,"vue":4,"vue-router":3}],6:[function(require,module,exports){
+var bus = new Vue();
+
+Vue.transition('fadeIn', {
+    css: false,
+    enter: function enter(element, done) {
+        $(element).css('opacity', 0).animate({ opacity: 1 }, 800, done);
+    },
+    enterCancelled: function enterCancelled(element) {
+        $(element).stop();
+    },
+    leave: function leave(element, done) {
+        $(element).animate({ opacity: 0 }, 0, done);
+    },
+    leaveCancelled: function leaveCancelled(element) {
+        $(element).stop();
+    }
+});
+
+},{"./components/404.vue":7,"./components/About.vue":8,"./components/Contact.vue":9,"./components/FunStuff.vue":10,"./components/Home.vue":11,"./components/NavBar.vue":12,"./components/Resume.vue":13,"./modules/store":14,"vue":4,"vue-router":3}],7:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\t.title.a{\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t  -webkit-animation-delay: 2s;\n\t          animation-delay: 2s;\n\t}\n\t.title.b{\n\t  -webkit-animation-duration: 3s;\n\t          animation-duration: 3s;\n\t  -webkit-animation-delay: 3.6s;\n\t          animation-delay: 3.6s;\n\t}\n\n\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12332,19 +12413,181 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"content\">\n\t    <div class=\"title\">Clay Malven</div>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"content\">\n\t    <div class=\"title text-center a animated fadeOut\">What is lose and never found?</div>\n\t    <div class=\"title text-center b animated fadeIn\">this 404 page</div>\n    </div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/404.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n\t.title.a{\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t  -webkit-animation-delay: 2s;\n\t          animation-delay: 2s;\n\t}\n\t.title.b{\n\t  -webkit-animation-duration: 3s;\n\t          animation-duration: 3s;\n\t  -webkit-animation-delay: 3.6s;\n\t          animation-delay: 3.6s;\n\t}\n\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2,"vueify-insert-css":5}],8:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<h1>About</h1>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/About.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],9:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<h1>Contact</h1>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/Contact.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<h1>Fun Stuff</h1>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/FunStuff.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":4,"vue-hot-reload-api":2}],11:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\t.name {\n\t\tmargin-left: -10px;\n\t}\n\n\t.name.space {\n\t\tmargin-left: 10px;\n\t}\n\n\t.name.first {\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t  -webkit-animation-delay: .5s;\n\t          animation-delay: .5s;\n\t}\n\n\t.name.last {\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t}\n\t.name.last.m {\n\t\t-webkit-animation-delay: 2s;\n\t\t        animation-delay: 2s;\n\t}\n\t.name.last.a {\n\t\t-webkit-animation-delay: 2.1s;\n\t\t        animation-delay: 2.1s;\n\t}\n\t.name.last.l {\n\t\t-webkit-animation-delay: 2.2s;\n\t\t        animation-delay: 2.2s;\n\t}\n\t.name.last.v {\n\t\t-webkit-animation-delay: 2.3s;\n\t\t        animation-delay: 2.3s;\n\t}\n\t.name.last.e {\n\t\t-webkit-animation-delay: 2.4s;\n\t\t        animation-delay: 2.4s;\n\t}\n\t.name.last.n {\n\t\t-webkit-animation-delay: 2.5s;\n\t\t        animation-delay: 2.5s;\n\t}\n\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var store = require('../modules/store');
+exports.default = {
+  name: 'Home',
+  data: function data() {
+    return {
+      store: store,
+      first: {
+        C: 'C',
+        l: 'l',
+        a: 'a',
+        y: 'y'
+      },
+      last: {
+        M: 'M',
+        a: 'a',
+        l: 'l',
+        v: 'v',
+        e: 'e',
+        n: 'n'
+      },
+      resumeText: false
+    };
+  }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"content\">\n\t    <div class=\"title text-center\">\n\t    \t<div v-show=\"store.aboutText\" class=\"resume\">All About<br></div>\n\t\t    <span v-modal=\"first.C\" class=\"name first c animated fadeInLeftBig\">{{ first.C }}</span>\n\t\t    <span v-modal=\"first.l\" class=\"name first l animated fadeInDownBig\">{{ first.l }}</span>\n\t\t    <span v-modal=\"first.a\" class=\"name first a animated fadeInUpBig\">{{ first.a }}</span>\n\t\t    <span v-modal=\"first.y\" class=\"name first y animated fadeInRightBig\">{{ first.y }}</span>\n\t\t    <span class=\"name space\"> </span>\n\t\t    <span v-modal=\"last.M\" class=\"name last m animated zoomIn\">{{ last.M }}</span>\n\t\t    <span v-modal=\"last.a\" class=\"name last a animated zoomIn\">{{ last.a }}</span>\n\t\t    <span v-modal=\"last.l\" class=\"name last l animated zoomIn\">{{ last.l }}</span>\n\t\t    <span v-modal=\"last.v\" class=\"name last v animated zoomIn\">{{ last.v }}</span>\n\t\t    <span v-modal=\"last.e\" class=\"name last e animated zoomIn\">{{ last.e }}</span>\n\t\t    <span v-modal=\"last.n\" class=\"name last n animated zoomIn\">{{ last.n }}</span>\n\t\t    <span v-show=\"store.resumeText\" class=\"name s\">'s</span><br>\n\t\t    <div v-show=\"store.resumeText\" class=\"resume\">Resume</div>\n\t    </div>\n\t    \n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/Home.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n\t.name {\n\t\tmargin-left: -10px;\n\t}\n\n\t.name.space {\n\t\tmargin-left: 10px;\n\t}\n\n\t.name.first {\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t  -webkit-animation-delay: .5s;\n\t          animation-delay: .5s;\n\t}\n\n\t.name.last {\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t}\n\t.name.last.m {\n\t\t-webkit-animation-delay: 2s;\n\t\t        animation-delay: 2s;\n\t}\n\t.name.last.a {\n\t\t-webkit-animation-delay: 2.1s;\n\t\t        animation-delay: 2.1s;\n\t}\n\t.name.last.l {\n\t\t-webkit-animation-delay: 2.2s;\n\t\t        animation-delay: 2.2s;\n\t}\n\t.name.last.v {\n\t\t-webkit-animation-delay: 2.3s;\n\t\t        animation-delay: 2.3s;\n\t}\n\t.name.last.e {\n\t\t-webkit-animation-delay: 2.4s;\n\t\t        animation-delay: 2.4s;\n\t}\n\t.name.last.n {\n\t\t-webkit-animation-delay: 2.5s;\n\t\t        animation-delay: 2.5s;\n\t}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}],7:[function(require,module,exports){
+},{"../modules/store":14,"vue":4,"vue-hot-reload-api":2,"vueify-insert-css":5}],12:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n.nav{\n\t-webkit-animation-duration: 1s;\n\t        animation-duration: 1s;\n\t-webkit-animation-delay: 5s;\n\t        animation-delay: 5s;\n}\n.nav a {\n\tcolor: #111;\n}\n\n.nav:hover a {\n\ttext-shadow: 1px 1px 1px #bbb;\n}\n\n.nav a:hover, .nav a:focus{\ncolor: #414141;\n\ttext-shadow: none;\n\tbackground: transparent !important;\n}\n\n.nav-pills > li > a {\n\tborder-radius: 0px;\n}\n.resumeLink:hover < .name.s{\n\topacity: 1;\n}\n")
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var store = require('../modules/store');
+exports.default = {
+	name: 'Nav',
+	data: function data() {
+		return {
+			store: store
+		};
+	},
+
+	methods: {
+		showResumeText: function showResumeText() {
+			store.resumeText = true;
+		},
+		hideResumeText: function hideResumeText() {
+			store.resumeText = false;
+		},
+		showAboutText: function showAboutText() {
+			store.aboutText = true;
+		},
+		hideAboutText: function hideAboutText() {
+			store.aboutText = false;
+		}
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<ul class=\"nav nav-pills nav-justified nav-static-top animated slideInDown\">\n\t\t<li class=\"aboutLink\" v-on:mouseover=\"showAboutText\" v-on:mouseout=\"hideAboutText\" role=\"presentation\"><a v-link=\"{name: 'about'}\">About</a></li>\n\t\t<li class=\"resumeLink\" v-on:mouseover=\"showResumeText\" v-on:mouseout=\"hideResumeText\" role=\"presentation\"><a v-link=\"{name: 'resume'}\">Resume</a></li>\n\t\t<li class=\"funStuffLink\" role=\"presentation\"><a v-link=\"{name: 'fun-stuff'}\">Fun Stuff</a></li>\n\t\t<li class=\"contactLink\" role=\"presentation\"><a v-link=\"{name: 'contact'}\">Contact</a></li>\n\t</ul>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/NavBar.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n.nav{\n\t-webkit-animation-duration: 1s;\n\t        animation-duration: 1s;\n\t-webkit-animation-delay: 5s;\n\t        animation-delay: 5s;\n}\n.nav a {\n\tcolor: #111;\n}\n\n.nav:hover a {\n\ttext-shadow: 1px 1px 1px #bbb;\n}\n\n.nav a:hover, .nav a:focus{\ncolor: #414141;\n\ttext-shadow: none;\n\tbackground: transparent !important;\n}\n\n.nav-pills > li > a {\n\tborder-radius: 0px;\n}\n.resumeLink:hover < .name.s{\n\topacity: 1;\n}\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../modules/store":14,"vue":4,"vue-hot-reload-api":2,"vueify-insert-css":5}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12352,18 +12595,28 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<h1>Page One</h1>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<h2>OBJECTIVE</h2>\n\n<p>Seeking a challenging and rewarding position as a Web Developer, which will allow me to \n\nexercise and expand my skills, while contributing to the success of an organization.</p>\n\n<h2>SUMMARY OF SKILLS</h2>\n\n<p>I obtain solid experiences in the IT field that allowed me to utilize my technical and problem-\n\nsolving skills. I possess an ability that allows me to pay attention to detail, \n\nwork productively with minimal supervision, and communicate technical concept to \n\na non-technical audiences. I learn new technologies quickly and excel in all areas \n\nof the IT industry.</p>  \n\n<h2>AREAS OF EXPERIENCE</h2>\n\n<p>HTML, XHTML, HTML5, CSS PHP4, PHP5 \n\nWeb Programming Languages \n\nJavaScript/JQuery Zend, Laravel \n\nDrupal Development Drupal, Joomla \n\nAdobe Photoshop CS5/6 Mysql, FileMaker/9/10/Server</p> \n\n<h2>CERTIFICATIONS</h2>\n<ul>\n<li>CompTIA Network+</li> <li>MCP</li>\n</ul>\n<h2>EDUCATION</h2>\n\n<p>2005-2006 Career Point Institute, Network Technician Program</p>\n\n<h2>EMPLOYMENT</h2>\n\n<h3>Carnegie Technologies San Antonio TX, Sept 2014 - July 2015</h3>\n\n<h4>PHP Developer</h4> \n<ul>\n<li>Develop student management system for private and charter schools</li>\n\n<li>Utilize the Laravel framework and Twitter Bootstrap</li>\n\n<li>Image manipulation, slicing and optimization using Photoshop</li>\n\n<li>Browser compatibility testing with all major browser</li>\n\n<li>Use Git version control and Redmine to track bugs</li>\n</ul>\n<h3>SPFM LP San Antonio TX, March 2013 - Sept 2014</h3>\n\n<h4>Drupal Developer</h4> \n<ul>\n<li>Provide front-end development &amp; site building utilizing Drupal cms</li>\n\n<li>Custom module building and Drupal Themeing</li>\n\n<li>Image manipulation, slicing and optimization using Photoshop and Illustrator</li>\n\n<li>Browser compatibility testing with all major browser</li>\n\n<li>Create and send out HTML newsletters</li>\n</ul>\nBoss Creative San Antonio TX, July 2012 - Feb 2013\n\nDrupal Developer \n\n Provide front-end development &amp; site building utilizing Drupal cms\n\n Image manipulation, slicing and optimization using Photoshop\n\n Browser compatibility testing with all major browser\n\n Updated articles for Nside online magazine\n\nTexas Youth Hunting Program, San Antonio TX, August 2008 – July 2012\n\nWebmaster/Database Admin/IT Support\n\n Developed Online Application System with FileMaker Backend \n\n Utilized an expert knowledge of JavaScript, HTML, DOM, and CSS to deliver advanced user \n\ninterfaces and controls \n\n Computer hardware and software support MS OS\n\n Design and Developed database with FileMaker Pro\n\nPre Web Experience \n\n2Wire, San Antonio TX August 2007- July 2008\n\nTier 1 Tech support\n\n Phone/email support for TV, internet and VOIP issues in a call center environment\n\n Walk customer through connecting wireless, setting up TV, and troubleshoot VOIP \n\n Would also provide floor support to agents on the floor and mentor new agents\n\n Document and record issues within the CRM database\n\nREFERENCES\n\nRob Kinkaid - Supervisor @ SPFM LP - 210-763-2116\n\nMike Pilkiton - HR Manger @ Boss Creative - 210-390-0051\n\nQuita Hill - Office Manger @ Texas Wildlife Association - 210-344-2240\n\nLINKS TO WORK\n\nSchenley Learning - www.schenleylearning.com\n\nLivingston Lures - www.livingstonlures.com\n\nRitter Dental - www.ritterdentalusa.com, ritter.dev.spfmlp.com\n\nHerman Sons Fraternal Insurance - www.texashermannsons.org\n\nSan Antonio Family Law Section - www.safamilylaw.org\n\nTexas Leather Interiors - www.texasleatherinteriors.com\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
-  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/PageOne.vue"
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/Resume.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":4,"vue-hot-reload-api":2}]},{},[5]);
+},{"vue":4,"vue-hot-reload-api":2}],14:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+   search: '',
+   resumeText: false,
+   aboutText: false
+
+};
+
+},{}]},{},[6]);
 
 //# sourceMappingURL=app.js.map
