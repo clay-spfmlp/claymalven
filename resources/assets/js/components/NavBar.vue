@@ -1,5 +1,5 @@
 <template>
-	<ul class="nav nav-pills nav-justified nav-static-top animated slideInDown">
+	<ul class="nav nav-pills nav-justified animated slideInDown">
 		<li class="aboutLink" v-on:mouseover="showAboutText" v-on:mouseout="hideAboutText" role="presentation"><a v-link="{name: 'about'}">About</a></li>
 		<li class="resumeLink" v-on:mouseover="showResumeText" v-on:mouseout="hideResumeText" role="presentation"><a v-link="{name: 'resume'}">Resume</a></li>
 		<li class="funStuffLink" role="presentation"><a v-link="{name: 'fun-stuff'}">Fun Stuff</a></li>
@@ -7,7 +7,7 @@
 	</ul>
 </template>
 <script>
-	var store = require('../modules/store');
+	var store = require('../modules/store')
 	export default {
 		name: 'Nav',
 		data(){
@@ -34,18 +34,18 @@
 <style>
 .nav{
 	animation-duration: 1s;
-	animation-delay: 5s;
+	animation-delay: 3.5s;
 }
 .nav a {
-	color: #111;
+	color: #eee;
 }
 
 .nav:hover a {
-	text-shadow: 1px 1px 1px #bbb;
+	color: #eee;
 }
 
 .nav a:hover, .nav a:focus{
-color: #414141;
+	color: #fff;
 	text-shadow: none;
 	background: transparent !important;
 }

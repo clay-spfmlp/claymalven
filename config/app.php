@@ -140,10 +140,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        claymalven\Providers\AppServiceProvider::class,
+        claymalven\Providers\AuthServiceProvider::class,
+        claymalven\Providers\EventServiceProvider::class,
+        claymalven\Providers\RouteServiceProvider::class,
 
     ],
 

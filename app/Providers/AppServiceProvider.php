@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace claymalven\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace claymalven\Http\Controllers\Auth;
 
-use App\User;
+use claymalven\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use claymalven\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

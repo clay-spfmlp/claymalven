@@ -1,11 +1,16 @@
 var Vue = require('vue')
 var VueRouter = require('vue-router')
+var VueResource = require('vue-resource')
+
+window.$ = window.jQuery = require('jquery')
+var bootstrap = require('bootstrap/dist/js/bootstrap')
 
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
-import NavBar from './components/NavBar.vue';
+import NavBar from './components/NavBar.vue'
 
-var store = require('./modules/store');
+var store = require('./modules/store')
 
 var App = Vue.extend({
 
@@ -24,6 +29,9 @@ var App = Vue.extend({
     }
 
 })
+
+Vue.http.options.root = '/';
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
 
 var router = new VueRouter()
 
@@ -59,7 +67,7 @@ router.start(App, '#app')
 var bus = new Vue()
 
 
-Vue.transition('fadeIn', {
+Vue.transition('fadeView', {
     css: false,
     enter: function (element, done) {
         $(element)

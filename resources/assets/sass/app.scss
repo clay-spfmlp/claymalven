@@ -6,6 +6,8 @@ html, body {
 }
 
 body {
+	color: #eee;
+	background: #444;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -23,4 +25,8 @@ body {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.list-group-item {
+	background: #444;
 }
