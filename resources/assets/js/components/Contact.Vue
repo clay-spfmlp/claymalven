@@ -35,9 +35,9 @@
 		data(){
 	        return {
 	            store,
-	            fullName: 'Clay Malven',
-	            email: 'claycpi@gmail.com',
-	            message: 'Test',
+	            fullName: '',
+	            email: '',
+	            message: '',
 	        }
 	    },
 
