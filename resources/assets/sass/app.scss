@@ -14,6 +14,7 @@ body {
     display: table;
     font-weight: 100;
     font-family: 'Lato';
+    padding-top: 70px;
 }
 
 .title {
@@ -29,4 +30,11 @@ body {
 
 .list-group-item {
 	background: #444;
+}
+
+:focus {
+	outline: none !important;
+}
+hr {
+	padding-bottom: 20px;
 }

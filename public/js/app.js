@@ -24840,6 +24840,10 @@ router.map({
     '/contact': {
         component: require('./components/Contact.vue'),
         name: 'contact'
+    },
+    '/login': {
+        component: require('./components/Login.vue'),
+        name: 'login'
     }
 });
 
@@ -24863,7 +24867,7 @@ Vue.transition('fadeView', {
     }
 });
 
-},{"./components/404.vue":17,"./components/About.vue":18,"./components/Contact.vue":19,"./components/FunStuff.vue":20,"./components/Home.vue":21,"./components/NavBar.vue":22,"./components/Resume.vue":23,"./modules/store":24,"bootstrap/dist/js/bootstrap":1,"jquery":2,"vue":14,"vue-resource":6,"vue-router":13}],17:[function(require,module,exports){
+},{"./components/404.vue":17,"./components/About.vue":18,"./components/Contact.vue":19,"./components/FunStuff.vue":20,"./components/Home.vue":21,"./components/Login.vue":22,"./components/NavBar.vue":23,"./components/Resume.vue":24,"./modules/store":25,"bootstrap/dist/js/bootstrap":1,"jquery":2,"vue":14,"vue-resource":6,"vue-router":13}],17:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("\n\t.title.a{\n\t  -webkit-animation-duration: 2s;\n\t          animation-duration: 2s;\n\t  -webkit-animation-delay: 2s;\n\t          animation-delay: 2s;\n\t}\n\t.title.b{\n\t  -webkit-animation-duration: 3s;\n\t          animation-duration: 3s;\n\t  -webkit-animation-delay: 3.6s;\n\t          animation-delay: 3.6s;\n\t}\n\n\n")
 "use strict";
 
@@ -24896,7 +24900,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h1>About</h1>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h1>ABOUT</h1>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -24951,7 +24955,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-6 col-md-offset-3\">\n\t\t<h1>Contact</h1>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\" v-if=\"!store.submitContact\">\n\t\t\t\t<form class=\"form\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"fullName\" placeholder=\"full name\" type=\"text\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"email\" placeholder=\"email\" type=\"email\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<textarea required=\"\" rows=\"4\" v-model=\"message\" placeholder=\"message\" class=\"form-control\"></textarea>\n\t\t\t\t\t</div>\n\t\t\t\t\t<button v-if=\"!store.submitText\" @click=\"submit\" class=\"btn btn-primary col-md-12\">Send</button>\n\t\t\t\t\t<button v-if=\"store.submitText\" class=\"btn col-md-12\"><i class=\"fa fa-spinner fa-pulse\"></i></button>\n\t\t\t\t\t\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\" v-if=\"store.submitContact\">\n\t\t\t\t<h3>Thank You</h3>\n\t\t\t\t<p>I will get in touch with you as soon as I can.</p>\n\t\t\t\t<button class=\"btn btn-primary\" @click=\"store.submitContact = false\">Back</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-6 col-md-offset-3\">\n\t\t<h1>CONTACT</h1>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\" v-if=\"!store.submitContact\">\n\t\t\t\t<form class=\"form\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"fullName\" placeholder=\"full name\" type=\"text\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"email\" placeholder=\"email\" type=\"email\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<textarea required=\"\" rows=\"4\" v-model=\"message\" placeholder=\"message\" class=\"form-control\"></textarea>\n\t\t\t\t\t</div>\n\t\t\t\t\t<button v-if=\"!store.submitText\" @click=\"submit\" class=\"btn btn-primary col-md-12\">Send</button>\n\t\t\t\t\t<button v-if=\"store.submitText\" class=\"btn col-md-12\"><i class=\"fa fa-spinner fa-pulse\"></i></button>\n\t\t\t\t\t\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\" v-if=\"store.submitContact\">\n\t\t\t\t<h3>Thank You</h3>\n\t\t\t\t<p>I will get in touch with you as soon as I can.</p>\n\t\t\t\t<button class=\"btn btn-primary\" @click=\"store.submitContact = false\">Back</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -24963,7 +24967,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../modules/store":24,"vue":14,"vue-hot-reload-api":4}],20:[function(require,module,exports){
+},{"../modules/store":25,"vue":14,"vue-hot-reload-api":4}],20:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24971,7 +24975,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h1>Fun Stuff</h1>\n\t</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h1>FUN STUFF</h1>\n\t</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -25032,7 +25036,62 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../modules/store":24,"vue":14,"vue-hot-reload-api":4,"vueify-insert-css":15}],22:[function(require,module,exports){
+},{"../modules/store":25,"vue":14,"vue-hot-reload-api":4,"vueify-insert-css":15}],22:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var store = require('../modules/store');
+exports.default = {
+
+	name: 'Contact',
+
+	data: function data() {
+		return {
+			store: store,
+			fullName: '',
+			email: '',
+			message: ''
+		};
+	},
+
+	methods: {
+
+		submit: function submit() {
+
+			store.submitText = true;
+
+			var resource = this.$resource('/api/contact');
+
+			resource.save({
+				full_name: this.fullName,
+				email: this.email,
+				message: this.message
+
+			}, function (contact) {
+				store.submitText = false;
+				store.submitContact = true;
+			});
+		}
+
+	}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-6 col-md-offset-3\">\n\t\t<h1>LOGIN</h1>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-12\" v-if=\"!store.submitContact\">\n\t\t\t\t<form class=\"form\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"fullName\" placeholder=\"full name\" type=\"text\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<input required=\"\" v-model=\"email\" placeholder=\"email\" type=\"email\" class=\"form-control\" maxlength=\"100\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<textarea required=\"\" rows=\"4\" v-model=\"message\" placeholder=\"message\" class=\"form-control\"></textarea>\n\t\t\t\t\t</div>\n\t\t\t\t\t<button v-if=\"!store.submitText\" @click=\"submit\" class=\"btn btn-primary col-md-12\">Send</button>\n\t\t\t\t\t<button v-if=\"store.submitText\" class=\"btn col-md-12\"><i class=\"fa fa-spinner fa-pulse\"></i></button>\n\t\t\t\t\t\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\" v-if=\"store.submitContact\">\n\t\t\t\t<h3>Thank You</h3>\n\t\t\t\t<p>I will get in touch with you as soon as I can.</p>\n\t\t\t\t<button class=\"btn btn-primary\" @click=\"store.submitContact = false\">Back</button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/Login.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../modules/store":25,"vue":14,"vue-hot-reload-api":4}],23:[function(require,module,exports){
 var __vueify_style__ = require("vueify-insert-css").insert("\n.nav{\n\t-webkit-animation-duration: 1s;\n\t        animation-duration: 1s;\n\t-webkit-animation-delay: 3.5s;\n\t        animation-delay: 3.5s;\n}\n.nav a {\n\tcolor: #eee;\n}\n\n.nav:hover a {\n\tcolor: #eee;\n}\n\n.nav a:hover, .nav a:focus{\n\tcolor: #fff;\n\ttext-shadow: none;\n\tbackground: transparent !important;\n}\n\n.nav-pills > li > a {\n\tborder-radius: 0px;\n}\n.resumeLink:hover < .name.s{\n\topacity: 1;\n}\n")
 'use strict';
 
@@ -25065,7 +25124,7 @@ exports.default = {
 	}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<ul class=\"nav nav-pills nav-justified animated slideInDown\">\n\t\t<li class=\"aboutLink\" v-on:mouseover=\"showAboutText\" v-on:mouseout=\"hideAboutText\" role=\"presentation\"><a v-link=\"{name: 'about'}\">About</a></li>\n\t\t<li class=\"resumeLink\" v-on:mouseover=\"showResumeText\" v-on:mouseout=\"hideResumeText\" role=\"presentation\"><a v-link=\"{name: 'resume'}\">Resume</a></li>\n\t\t<li class=\"funStuffLink\" role=\"presentation\"><a v-link=\"{name: 'fun-stuff'}\">Fun Stuff</a></li>\n\t\t<li class=\"contactLink\" role=\"presentation\"><a v-link=\"{name: 'contact'}\">Contact</a></li>\n\t</ul>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<nav class=\"navbar navbar-fixed-top navbar-default\">\n  <div class=\"container-fluid\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Brand</a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#\">About<!-- <span class=\"sr-only\">(current)</span> --></a></li>\n        <li><a v-link=\"{name: 'resume'}\">Resume</a></li>\n        <li><a v-link=\"{name: 'fun-stuff'}\">Fun Stuff</a></li>\n        <li><a v-link=\"{name: 'contact'}\">Contact</a></li>\n        <li><a v-link=\"{name: 'login'}\">Login</a></li>\n      </ul>\n<!--       <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\">Link</a></li>\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"#\">Action</a></li>\n            <li><a href=\"#\">Another action</a></li>\n            <li><a href=\"#\">Something else here</a></li>\n            <li role=\"separator\" class=\"divider\"></li>\n            <li><a href=\"#\">Separated link</a></li>\n          </ul>\n        </li>\n      </ul> -->\n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n</nav>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -25081,7 +25140,8 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../modules/store":24,"vue":14,"vue-hot-reload-api":4,"vueify-insert-css":15}],23:[function(require,module,exports){
+},{"../modules/store":25,"vue":14,"vue-hot-reload-api":4,"vueify-insert-css":15}],24:[function(require,module,exports){
+var __vueify_style__ = require("vueify-insert-css").insert("\n\tsmall {\n\t\tcolor: #bbb !important;\n\t}\n")
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25089,19 +25149,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {};
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h2>OBJECTIVE</h2>\n\n\t\t<p>Seeking a challenging and rewarding position as a Web Developer, which will allow me to exercise and expand my skills, while contributing to the success of an organization.</p>\n\t\t<hr>\n\t\t<h2>SUMMARY OF SKILLS</h2>\n\n\t\t<p>I obtain solid experiences in the IT field that allowed me to utilize my technical and problem-solving skills. I possess an ability that allows me to pay attention to detail, work productively with minimal supervision, and communicate technical concept to a non-technical audiences. I learn new technologies quickly and excel in all areas of the IT industry.</p>  \n\t\t<hr>\n\t\t<h2>AREAS OF EXPERIENCE</h2>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-5\">\n\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>HTML</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>CSS</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>PHP</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>JavaScript</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">4 Years</span>MySql</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">2 Years</span>Laravel</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>JQuery</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">1 Year</span>Vue.js</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">3 Years</span>Drupal</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">4 Years</span>FileMaker</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t\t<hr>\n\n\t\t<h2>CERTIFICATIONS</h2>\n\t\t<ul>\n\t\t\t<li>CompTIA Network+</li>\n\t\t\t<li>CompTIA A+</li>\n\t\t\t<li>MCP</li>\n\t\t</ul>\n\t\t<hr>\n\t\t<h2>EDUCATION</h2>\n\n\t\t<p>2005-2006 Career Point Institute, Network Technician Program</p>\n\t\t<hr>\n\t\t<h2>EMPLOYMENT</h2>\n\n\t\t<h3>Carnegie Technologies San Antonio TX, Sept 2014 - July 2015</h3>\n\n\t\t<h4>PHP Developer</h4> \n\t\t<ul>\n\t\t\t<li>Develop student management system for private and charter schools</li>\n\t\t\t<li>Utilize the Laravel framework and Twitter Bootstrap</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Use Git version control and Redmine to track bugs</li>\n\t\t</ul>\n\n\t\t<h3>SPFM LP San Antonio TX, March 2013 - Sept 2014</h3>\n\t\t<h4>Drupal Developer</h4> \n\t\t<ul>\n\t\t\t<li>Provide front-end development &amp; site building utilizing Drupal cms</li>\n\t\t\t<li>Custom module building and Drupal Themeing</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop and Illustrator</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Create and send out HTML newsletters</li>\n\t\t</ul>\n\n\t\t<h3>Boss Creative San Antonio TX, July 2012 - Feb 2013</h3>\n\t\t<h4>Drupal Developer</h4>\n\t\t<ul>\n\t\t\t<li>Provide front-end development &amp; site building utilizing Drupal cms</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Updated articles for Nside online magazine</li>\n\t\t</ul>\n\n\t\t<h3>Texas Youth Hunting Program, San Antonio TX, August 2008 – July 2012</h3>\n\t\t<h4>Webmaster/Database Admin/IT Support</h4>\n\t\t<ul>\n\t\t\t<li>Developed Online Application System with FileMaker Backend </li>\n\t\t\t<li>Utilized an expert knowledge of JavaScript, HTML, DOM, and CSS to deliver advanced user interfaces and controls </li>\n\t\t\t<li>Computer hardware and software support MS OS</li>\n\t\t\t<li>Design and Developed database with FileMaker Pro</li>\n\t\t</ul>\n\t\t<h2>Pre Web Experience</h2>\n\n\t\t<h3>2Wire, San Antonio TX August 2007- July 2008</h3>\n\t\t<h4>Tier 1 Tech support</h4>\n\t\t<ul>\n\t\t\t<li>Phone/email support for TV, internet and VOIP issues in a call center environment</li>\n\t\t\t<li>Walk customer through connecting wireless, setting up TV, and troubleshoot VOIP </li>\n\t\t\t<li>Would also provide floor support to agents on the floor and mentor new agents</li>\n\t\t\t<li>Document and record issues within the CRM database</li>\n\t\t</ul>\n\t\t<hr>\n\t\t<h2>REFERENCES</h2>\n\n\t\t<div>Rob Kinkaid - Supervisor @ SPFM LP - 210-763-2116</div>\n\t\t<div>Mike Pilkiton - HR Manger @ Boss Creative - 210-390-0051</div>\n\t\t<div>Quita Hill - Office Manger @ Texas Wildlife Association - 210-344-2240</div>\n\t\t<hr>\n\t\t<h2>LINKS TO WORK</h2>\n\n\t\t<div>LeadPropeller - <a href=\"http://leadpropeller.com\">www.leadpropeller.com</a>\n\t\t<div>Schenley Learning - <a href=\"http://www.schenleylearning.com\" target=\"_blank\">www.schenleylearning.com</a></div>\n\t\t<div>Livingston Lures - <a href=\"http://www.livingstonlures.com\" target=\"_blank\">www.livingstonlures.com</a></div>\n\t\t<div>Ritter Dental - <a href=\"http://www.ritterdentalusa.com\" target=\"_blank\">www.ritterdentalusa.com</a></div>\n\t\t<div>Herman Sons Fraternal Insurance - <a href=\"http://www.texashermannsons.com\" target=\"_blank\">www.texashermannsons.org</a></div>\n\t\t<div>Texas Leather Interiors - <a href=\"http://www.texasleatherinteriors.com\" target=\"_blank\">www.texasleatherinteriors.com</a></div>\n\t</div>\n\n</div>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\t<div class=\"col-md-8 col-md-offset-2\">\n\t\t<h2>OBJECTIVE</h2>\n\n\t\t<p>Seeking a challenging and rewarding position as a full-stack developer, which will allow me to exercise and expand my skills, while contributing to the success of an organization.</p>\n\t\t<hr>\n\n\t\t<!-- <h2>SUMMARY OF SKILLS</h2>\n\n\t\t<p>I obtain solid experiences in the IT field that allowed me to utilize my technical and problem-solving skills. I possess an ability that allows me to pay attention to detail, work productively with minimal supervision, and communicate technical concept to a non-technical audiences. I learn new technologies quickly and excel in all areas of the IT industry.</p>  \n\t\t<hr> -->\n\t\t<h2>TECHNICAL SKILLS</h2>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-5\">\n\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t<li class=\"list-group-item\"><h3 class=\"list-group-item-heading\">Programming</h3></li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>PHP</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">2 Years</span>Laravel</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">3 Years</span>Drupal</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">4 Years</span>MySql</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">4 Years</span>FileMaker</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">4 Years</span>Linux/Apache</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-5 col-md-offset-2\">\n\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t<li class=\"list-group-item\"><h3 class=\"list-group-item-heading\">Front-end</h3></li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>HTML</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>CSS</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">2 Years</span>SCSS</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>JavaScript</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">8 Years</span>JQuery</li>\n\t\t\t\t\t<li class=\"list-group-item\"><span class=\"badge\">1 Year</span>Vue.js</li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t\t<hr>\n\n<!-- \t\t<h2>CERTIFICATIONS</h2>\n\t\t<ul>\n\t\t\t<li>CompTIA Network+</li>\n\t\t\t<li>CompTIA A+</li>\n\t\t\t<li>MCP</li>\n\t\t</ul>\n\t\t<hr> -->\n\t\t<h2>EDUCATION</h2>\n\n\t\t<p>2005-2006 Career Point Institute, Network Technician Program</p>\n\t\t<hr>\n\t\t<h2>SELECTED WORK EXPERIENCE</h2>\n\n\t\t<h3>Freedom Driven <small>San Antonio TX, July 2015 - Dec 2015</small></h3>\n\n\t\t<h4>PHP Developer</h4> \n\t\t<ul>\n\t\t\t<li>Develop registration for Leadpropller and ReiMobile</li>\n\t\t\t<li>Utilize Laravel and MySql for the backend</li>\n\t\t\t<li>Employ Vue.js and Bootstrap to handle the frontend</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Use Git version control and Bugsnagg to track bugs</li>\n\t\t</ul>\n\n\t\t<h3>Carnegie Technologies <small>San Antonio TX, Sept 2014 - July 2015</small></h3>\n\n\t\t<h4>PHP Developer</h4> \n\t\t<ul>\n\t\t\t<li>Develop student management system for private and charter schools</li>\n\t\t\t<li>Utilize the Laravel framework and Twitter Bootstrap</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Use Git version control and Redmine to track bugs</li>\n\t\t</ul>\n\n\t\t<h3>SPFM LP <small>San Antonio TX, March 2013 - Sept 2014</small></h3>\n\t\t<h4>Drupal Developer</h4> \n\t\t<ul>\n\t\t\t<li>Provide front-end development &amp; site building utilizing Drupal cms</li>\n\t\t\t<li>Custom module building and Drupal Themeing</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop and Illustrator</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Create and send out HTML newsletters</li>\n\t\t</ul>\n\n\t\t<h3>Boss Creative <small>San Antonio TX, July 2012 - Feb 2013</small></h3>\n\t\t<h4>Drupal Developer</h4>\n\t\t<ul>\n\t\t\t<li>Provide front-end development &amp; site building utilizing Drupal cms</li>\n\t\t\t<li>Image manipulation, slicing and optimization using Photoshop</li>\n\t\t\t<li>Browser compatibility testing with all major browser</li>\n\t\t\t<li>Updated articles for Nside online magazine</li>\n\t\t</ul>\n\n\t\t<h3>Texas Youth Hunting Program, <small>San Antonio TX, August 2008 – July 2012</small></h3>\n\t\t<h4>Webmaster/Database Admin/IT Support</h4>\n\t\t<ul>\n\t\t\t<li>Developed Online Application System with FileMaker Backend </li>\n\t\t\t<li>Utilized an expert knowledge of JavaScript, HTML, DOM, and CSS to deliver advanced user interfaces and controls </li>\n\t\t\t<li>Computer hardware and software support MS OS</li>\n\t\t\t<li>Design and Developed database with FileMaker Pro</li>\n\t\t</ul>\n\t\t<h2>Pre Web Experience</h2>\n\n\t\t<h3>2Wire <small>San Antonio TX August 2007- July 2008</small></h3>\n\t\t<h4>Tier 1 Tech support</h4>\n\t\t<ul>\n\t\t\t<li>Phone/email support for TV, internet and VOIP issues in a call center environment</li>\n\t\t\t<li>Walk customer through connecting wireless, setting up TV, and troubleshoot VOIP </li>\n\t\t\t<li>Would also provide floor support to agents on the floor and mentor new agents</li>\n\t\t\t<li>Document and record issues within the CRM database</li>\n\t\t</ul>\n\t\t<hr>\n<!-- \t\t<h2>REFERENCES</h2>\n\n\t\t<div>Rob Kinkaid - Supervisor @ SPFM LP - 210-763-2116</div>\n\t\t<div>Mike Pilkiton - HR Manger @ Boss Creative - 210-390-0051</div>\n\t\t<div>Quita Hill - Office Manger @ Texas Wildlife Association - 210-344-2240</div>\n\t\t<hr> -->\n\t\t<h2>LINKS TO WORK</h2>\n\n\t\t<div>LeadPropeller - <a href=\"http://leadpropeller.com\">www.leadpropeller.com</a>\n\t\t<div>Schenley Learning - <a href=\"http://www.schenleylearning.com\" target=\"_blank\">www.schenleylearning.com</a></div>\n\t\t<div>Livingston Lures - <a href=\"http://www.livingstonlures.com\" target=\"_blank\">www.livingstonlures.com</a></div>\n\t\t<div>Ritter Dental - <a href=\"http://www.ritterdentalusa.com\" target=\"_blank\">www.ritterdentalusa.com</a></div>\n\t\t<div>Herman Sons Fraternal Insurance - <a href=\"http://www.texashermannsons.com\" target=\"_blank\">www.texashermannsons.org</a></div>\n\t\t<div>Texas Leather Interiors - <a href=\"http://www.texasleatherinteriors.com\" target=\"_blank\">www.texasleatherinteriors.com</a></div>\n\t</div>\n\n</div>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/Users/michaelbustamante/Sites/laravel/resources/assets/js/components/Resume.vue"
+  module.hot.dispose(function () {
+    require("vueify-insert-css").cache["\n\tsmall {\n\t\tcolor: #bbb !important;\n\t}\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":14,"vue-hot-reload-api":4}],24:[function(require,module,exports){
+},{"vue":14,"vue-hot-reload-api":4,"vueify-insert-css":15}],25:[function(require,module,exports){
 'use strict';
 
 module.exports = {

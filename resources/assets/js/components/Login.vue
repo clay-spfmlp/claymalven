@@ -1,6 +1,6 @@
 <template>
 	<div class="col-md-6 col-md-offset-3">
-		<h1>CONTACT</h1>
+		<h1>LOGIN</h1>
 		<div class="row">
 			<div class="col-md-12" v-if="!store.submitContact">
 				<form class="form">

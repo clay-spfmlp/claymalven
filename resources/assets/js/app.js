@@ -60,6 +60,10 @@ router.map({
         component: require('./components/Contact.vue'),
         name: 'contact'
     },
+    '/login': {
+        component: require('./components/Login.vue'),
+        name: 'login'
+    },
 })
 
 router.start(App, '#app')

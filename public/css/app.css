@@ -8126,7 +8126,8 @@ body {
   width: 100%;
   display: table;
   font-weight: 100;
-  font-family: 'Lato'; }
+  font-family: 'Lato';
+  padding-top: 70px; }
 
 .title {
   font-size: 96px;
@@ -8140,5 +8141,11 @@ body {
 
 .list-group-item {
   background: #444; }
+
+:focus {
+  outline: none !important; }
+
+hr {
+  padding-bottom: 20px; }
 
 /*# sourceMappingURL=app.css.map */
