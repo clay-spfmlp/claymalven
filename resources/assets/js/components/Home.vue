@@ -1,7 +1,7 @@
 <template>
 	<div class="content">
 	    <div class="title text-center">
-	    	<span class="fullName animated tada">
+	    	<span class="fullName animated flip">
 			    <span v-modal="first.C" class="name first c animated fadeInLeftBig">{{ first.C }}</span>
 			    <span v-modal="first.l" class="name first l animated fadeInDownBig">{{ first.l }}</span>
 			    <span v-modal="first.a" class="name first a animated fadeInUpBig">{{ first.a }}</span>
@@ -82,7 +82,7 @@
 	}
 	.fullName {
 		animation-duration: .75s;
-	    animation-delay: 4.7s;
+	    animation-delay: 10s;
 	}
 
 </style>
