@@ -24923,9 +24923,9 @@ exports.default = {
 	data: function data() {
 		return {
 			store: store,
-			fullName: 'Clay Malven',
-			email: 'claycpi@gmail.com',
-			message: 'Test'
+			fullName: '',
+			email: '',
+			message: ''
 		};
 	},
 
