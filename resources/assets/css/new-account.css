@@ -1,0 +1,28 @@
+footer.navbar-fixed-bottom{
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    /* Set the fixed height of the footer here */
+}
+
+body.sticky-bottom {
+    padding-bottom: 250px;
+}
+
+#sticky-footer-logo {
+    margin-top: 0px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+#new-account-wizard-actions {
+    top : auto;
+    right : auto;
+    left: 0px;
+    bottom: 0px;
+}
+
+#new-account-step-content{
+    padding-bottom: 80px;
+}

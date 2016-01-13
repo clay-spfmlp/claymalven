@@ -1,0 +1,22 @@
+module.exports = {
+    autoresponder_from: '',
+    autoresponder_from_email: '',
+    business_address: '',
+    business_city: '',
+    business_state: '',
+    business_zip: '',
+    cpanel_user: '',
+    created_at: '',
+    domain_name: '',
+    email_for_leads: '',
+    global_email: '',
+    id: '',
+    office_fax: '',
+    office_phone: '',
+    path: '',
+    target_city: '',
+    target_state: '',
+    template_id: '',
+    updated_at: '',
+    user_id: ''
+}

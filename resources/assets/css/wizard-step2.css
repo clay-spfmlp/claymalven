@@ -1,0 +1,61 @@
+.website-templates {
+	margin-bottom: 30px;
+	margin-left: 5%;
+	margin-right: 25px;
+	width:90%;
+}
+
+.website-templates h3 {
+	margin-bottom: 30px;
+}
+
+.overview-templates {
+	margin-bottom: 30px;
+	margin-right: 25px;
+	width:100%;
+}
+
+.overview-templates h3 {
+	margin-bottom: 30px;
+}
+
+.template {
+	padding: 10px;
+}
+
+.selected {
+	border: 2px solid #4C96E5;
+}
+
+.template-info {
+
+	padding-right: 50px;
+}
+
+.template-info a {
+	margin-top: 10px;
+}
+
+.instruction {
+	background-color: #F6F6F6;
+	padding: 3px 5px;
+	color: #333333;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.instruction .fa {
+	color: black;
+}
+
+.fadein {
+	position:relative;
+	height:375px;
+	width:500px;
+}
+
+.fadein img {
+	position:absolute;
+	left:0;
+	top:0;
+}

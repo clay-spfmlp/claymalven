@@ -1,5 +1,5 @@
 <template>
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-3" transition="msg">
 		<h1>CONTACT</h1>
 		<div class="row">
 			<div class="col-md-12" v-if="!store.submitContact">
@@ -63,3 +63,6 @@
 		}
 	}
 </script>
+<style>
+
+</style>

@@ -1,21 +1,22 @@
 <template>
 	<div class="content">
 	    <div class="title text-center">
-	    	<span class="fullName animated flip">
-			    <span v-modal="first.C" class="name first c animated fadeInLeftBig">{{ first.C }}</span>
-			    <span v-modal="first.l" class="name first l animated fadeInDownBig">{{ first.l }}</span>
-			    <span v-modal="first.a" class="name first a animated fadeInUpBig">{{ first.a }}</span>
-			    <span v-modal="first.y" class="name first y animated fadeInRightBig">{{ first.y }}</span>
+	    	<span class="fullName animated rubberBand">
+	    	<span class="fullName2 animated bounce">
+	    	<span class="fullName3 animated shake">
+			    <span class="name first c animated zoomIn">C</span>
+			    <span class="name first l animated zoomIn">l</span>
+			    <span class="name first a animated zoomIn">a</span>
+			    <span class="name first y animated zoomIn">y</span>
 			    <span class="name space"> </span>
-			    <span v-modal="last.M" class="name last m animated zoomIn">{{ last.M }}</span>
-			    <span v-modal="last.a" class="name last a animated zoomIn">{{ last.a }}</span>
-			    <span v-modal="last.l" class="name last l animated zoomIn">{{ last.l }}</span>
-			    <span v-modal="last.v" class="name last v animated zoomIn">{{ last.v }}</span>
-			    <span v-modal="last.e" class="name last e animated zoomIn">{{ last.e }}</span>
-			    <span v-modal="last.n" class="name last n animated zoomIn">{{ last.n }}</span>
-		    </span>
+			    <span class="name last m animated zoomIn">M</span>
+			    <span class="name last a animated zoomIn">a</span>
+			    <span class="name last l animated zoomIn">l</span>
+			    <span class="name last v animated zoomIn">v</span>
+			    <span class="name last e animated zoomIn">e</span>
+			    <span class="name last n animated zoomIn">n</span>
+		    </span></span></span>
 	    </div>
-	    
 	</div>
 </template>
 
@@ -26,21 +27,6 @@
 		data(){
             return {
             	store,
-            	first: {
-            		C: 'C',
-            		l: 'l',
-            		a: 'a',
-            		y: 'y',
-            	},
-            	last: {
-            		M: 'M',
-            		a: 'a',
-            		l: 'l',
-            		v: 'v',
-            		e: 'e',
-            		n: 'n',
-            	},
-            	resumeText: false,
             }
         },
 	}
@@ -54,35 +40,50 @@
 		margin-left: 10px;
 	}
 
-	.name.first {
-	  animation-duration: 2s;
-	  animation-delay: .5s;
+	.name {
+	  animation-duration: .7s;
 	}
-
-	.name.last {
-	  animation-duration: 2s;
+	.name.first.c {
+	  animation-delay: 1s;
+	}
+	.name.first.l {
+	  animation-delay: 1.1s;
+	}
+	.name.first.a {
+	  animation-delay: 1.2s;
+	}
+	.name.first.y {
+	  animation-delay: 1.3s;
 	}
 	.name.last.m {
-		animation-delay: 2s;
+		animation-delay: 1.6s;
 	}
 	.name.last.a {
-		animation-delay: 2.1s;
+		animation-delay: 1.8s;
 	}
 	.name.last.l {
-		animation-delay: 2.2s;
+		animation-delay: 1.9s;
 	}
 	.name.last.v {
-		animation-delay: 2.3s;
+		animation-delay: 2s;
 	}
 	.name.last.e {
-		animation-delay: 2.4s;
+		animation-delay: 2.1s;
 	}
 	.name.last.n {
-		animation-delay: 2.5s;
+		animation-delay: 2.2s;
 	}
 	.fullName {
-		animation-duration: .75s;
-	    animation-delay: 10s;
+		animation-duration: .9s;
+	    animation-delay: 3s;
+	}
+	.fullName2 {
+		animation-duration: .9s;
+	    animation-delay: 4s;
+	}
+	.fullName3 {
+		animation-duration: .9s;
+	    animation-delay: 5s;
 	}
 
 </style>

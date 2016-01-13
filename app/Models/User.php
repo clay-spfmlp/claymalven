@@ -1,6 +1,6 @@
 <?php
 
-namespace claymalven;
+namespace claymalven\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

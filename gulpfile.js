@@ -13,6 +13,27 @@ require('laravel-elixir-vueify');
  |
  */
 
-elixir(function(mix) {
-    mix.browserify('app.js').sass('app.scss');
+// elixir(function (mix) {
+//     mix.browserify('app.js').sass('app.scss');
+// });
+
+elixir(function (mix) {
+    'use strict';
+    mix
+    // .styles([
+    //     'theme.css',
+    //     'ihover.css',
+    //     'hover.css',
+    //     'bootstrap.min.css',
+    //     'select2.min.css',
+    //     'select2-bootstrap.min.css',
+    //     'site-tabs.css',
+    //     'wizard-step2.css',
+    //     'carousel.css',
+    //     'animate.css',
+    //     'new-account.css',
+    //     'user-signup.css'
+    // ],'public/css/web.css')
+    .browserify('web.js')
 });
+

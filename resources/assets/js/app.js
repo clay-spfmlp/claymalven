@@ -30,7 +30,7 @@ var App = Vue.extend({
 
 })
 
-Vue.http.options.root = '/';
+
 Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
 
 var router = new VueRouter()
@@ -63,6 +63,10 @@ router.map({
     '/login': {
         component: require('./components/Login.vue'),
         name: 'login'
+    },
+    '/dashboard': {
+    	component: require('./components/FunStuff.vue'),
+    	name: 'dashboard'
     },
 })
 

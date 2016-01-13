@@ -8148,4 +8148,13 @@ body {
 hr {
   padding-bottom: 20px; }
 
+.msg-transition {
+  transition: all .3s ease; }
+
+.msg-enter {
+  opacity: 1; }
+
+.msg-leave {
+  opacity: 0; }
+
 /*# sourceMappingURL=app.css.map */

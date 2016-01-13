@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => claymalven\User::class,
+    'model' => claymalven\Models\User::class,
 
     /*
     |--------------------------------------------------------------------------

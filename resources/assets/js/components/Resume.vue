@@ -117,7 +117,7 @@
 		<hr> -->
 		<h2>LINKS TO WORK</h2>
 
-		<div>LeadPropeller - <a href="http://leadpropeller.com">www.leadpropeller.com</a>
+		<div>LeadPropeller - <a href="http://leadpropeller.com">www.leadpropeller.com</a></div>
 		<div>Schenley Learning - <a href="http://www.schenleylearning.com" target="_blank">www.schenleylearning.com</a></div>
 		<div>Livingston Lures - <a href="http://www.livingstonlures.com" target="_blank">www.livingstonlures.com</a></div>
 		<div>Ritter Dental - <a href="http://www.ritterdentalusa.com" target="_blank">www.ritterdentalusa.com</a></div>

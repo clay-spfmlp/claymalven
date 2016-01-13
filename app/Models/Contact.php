@@ -1,6 +1,6 @@
 <?php
 
-namespace claymalven;
+namespace claymalven\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
